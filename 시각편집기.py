@@ -3,7 +3,7 @@ from tkinter import messagebox
 from datetime import datetime
 
 using_font = "맑은 고딕"  # 사용할 폰트
-textsize = 12  # 폰트 크기
+textsize = 15  # 폰트 크기
 
 def toggle_style(tag):
     current_tags = text.tag_names("sel.first")
