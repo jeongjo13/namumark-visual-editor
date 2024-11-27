@@ -115,14 +115,14 @@ def convert():
     try:
         with open(filename, "w", encoding="utf-8") as file:
             file.write(formatted_text)
-        messagebox.showinfo("알림", f"파일이 저장되었습니다: {filename}")
+        messagebox.showinfo("알림", f"파일이 저장되었습니다\n\n파일 이름: {filename}")
     except Exception as e:
         messagebox.showerror("오류", f"파일 저장 중 오류가 발생했습니다: \n{e}")
 
 # GUI 설정
 window = Tk()
 window.title("나무마크 시각 편집기")
-window.geometry("1000x700")
+window.geometry("1200x700")
 
 button_frame = Frame(window)
 button_frame.pack()
