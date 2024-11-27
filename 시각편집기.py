@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter import simpledialog
 from datetime import datetime
 
 using_font = "맑은 고딕"  # 사용할 폰트
@@ -108,6 +109,14 @@ def convert():
         except TclError:
             break
     
+    category = simpledialog.askstring("분류 입력", "추가할 분류를 입력하세요. 추가할 분류가 여러 개인 경우, 띄어쓰기 없이 쉼표로 구분하여 입력해 주세요.")
+    category_list = category.split(",")
+    category_text = "\n"
+    for i in category_list : 
+        category_text = f"[[분류:{i}]]" + category_text
+    
+    formatted_text = category_text + formatted_text
+
     # 파일로 저장
     now = datetime.now()
     filename = now.strftime("%Y%m%d%H%M%S") + ".txt"
