@@ -6,11 +6,14 @@ using_font = "맑은 고딕"  # 사용할 폰트
 textsize = 15  # 폰트 크기
 
 def toggle_style(tag):
-    current_tags = text.tag_names("sel.first")
-    if tag in current_tags : 
-        text.tag_remove(tag, "sel.first", "sel.last")
-    else :
-        text.tag_add(tag, "sel.first", "sel.last")
+    try : 
+        current_tags = text.tag_names("sel.first")
+        if tag in current_tags : 
+            text.tag_remove(tag, "sel.first", "sel.last")
+        else :
+            text.tag_add(tag, "sel.first", "sel.last")
+    except TclError:
+        messagebox.showerror("오류", "텍스트를 선택한 후 서식을 추가할 수 있습니다.")
 
 def clear_selected_styles():
     try:
@@ -26,7 +29,7 @@ def clear_selected_styles():
         text.tag_remove("paragraph5", "sel.first", "sel.last")
         text.tag_remove("footnote", "sel.first", "sel.last")
     except TclError:
-        messagebox.showwarning("경고", "먼저 텍스트를 선택하세요!")
+        messagebox.showerror("오류", "텍스트를 선택한 후 서식을 제거할 수 있습니다.")
 
 def convert():
     full_text = text.get("1.0", "end-1c")
