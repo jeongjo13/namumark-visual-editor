@@ -110,6 +110,11 @@ def convert():
             break
     
     index_add = messagebox.askyesno(title="목차", message="목차를 삽입할까요?")
+    clearfix_add = messagebox.askyesno(title="clearfix", message="clearfix를 삽입할까요?")
+
+    if clearfix_add == True : 
+        formatted_text = "[clearfix]\n" + formatted_text
+
     if index_add == True : 
         formatted_text = "[목차]\n" + formatted_text
 
