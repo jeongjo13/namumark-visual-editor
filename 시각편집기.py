@@ -126,7 +126,7 @@ def convert():
             file.write(formatted_text)
         messagebox.showinfo("알림", f"파일이 저장되었습니다\n\n파일 이름: {filename}")
     except Exception as e:
-        messagebox.showerror("오류", f"파일 저장 중 오류가 발생했습니다: \n{e}")
+        messagebox.showerror("오류", f"파일 저장 중 오류가 발생했습니다. 오류 내용: \n\n{e}")
 
 # GUI 설정
 window = Tk()
