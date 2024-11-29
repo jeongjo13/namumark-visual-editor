@@ -14,7 +14,7 @@ def toggle_style(tag):
         else :
             text.tag_add(tag, "sel.first", "sel.last")
     except TclError:
-        messagebox.showerror("오류", "텍스트를 선택한 후 서식을 추가할 수 있습니다.")
+        messagebox.showerror("오류", "텍스트를 선택한 후 서식을 추가할 수 있습니다. 서식을 설정한 후 텍스트를 입력하는 기능은 추후 지원 예정입니다.")
 
 def clear_selected_styles():
     try:
