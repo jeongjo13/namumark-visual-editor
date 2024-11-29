@@ -114,12 +114,13 @@ def convert():
         formatted_text = "[목차]\n" + formatted_text
 
     category = simpledialog.askstring("분류 입력", "추가할 분류를 입력하세요. 추가할 분류가 여러 개인 경우, 띄어쓰기 없이 쉼표로 구분하여 입력해 주세요. 추가할 분류가 없다면 아무것도 입력하지 않습니다.")
-    category_list = category.split(",")
-    category_text = "\n"
-    for i in category_list : 
-        category_text = f"[[분류:{i}]]" + category_text
-    
-    formatted_text = category_text + formatted_text
+    if category != "" : 
+        category_list = category.split(",")
+        category_text = "\n"
+        for i in category_list : 
+            category_text = f"[[분류:{i}]]" + category_text
+        
+        formatted_text = category_text + formatted_text
 
     # 파일로 저장
     now = datetime.now()
